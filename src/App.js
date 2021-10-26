@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 
 import MoviesList from "./components/MoviesList";
+import classes from "./components/MoviesList.module.css";
 import "./App.css";
 
 function App() {
@@ -37,10 +38,10 @@ function App() {
 
   return (
     <React.Fragment>
-      <section>
-        <button onClick={fetchMoviesHandler}>Fetch Movies</button>
+      <section class={classes["movies-list"]}>
+        <button  onClick={fetchMoviesHandler}>Fetch Movies</button>
       </section>
-      <section>
+      <section class={classes["movies-list"]}>
         {isLoading && <p>loading</p>}
         <MoviesList movies={movieList} />
         {error && <p>{error}</p>}
